@@ -9,9 +9,10 @@
 
    <header>
         <h1 id="moving-text">Мой первый сайт</h1>
-		<audio id="music" controls>
-			<source src="магистрали.mp3" type=audio
-		</audio>
+        <audio id="music" controls>
+            <source src="магистрали.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио.
+        </audio>
         <button onclick="window.location.href='https://www.muit.tj'">Добро пожаловать</button>
     </header>
 
@@ -26,13 +27,31 @@
         <h2>Музыка</h2>
         <audio controls>
             <source src="магистрали.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает аудио блин.
+            Ваш браузер не поддерживает аудио.
         </audio>
     </main>
 
     <footer>
         &copy; 2025 | Сделано с ❤️ на ИКТ
     </footer>
+
+    <!-- Скрипт активации анимации -->
+    <script>
+        const music = document.getElementById('music');
+        const headerText = document.getElementById('moving-text');
+
+        music.addEventListener('play', () => {
+            headerText.classList.add('moving');
+        });
+
+        music.addEventListener('pause', () => {
+            headerText.classList.remove('moving');
+        });
+
+        music.addEventListener('ended', () => {
+            headerText.classList.remove('moving');
+        });
+    </script>
 
 </body>
 </html>
