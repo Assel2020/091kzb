@@ -45,3 +45,17 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* 🔄 Анимация для заголовка */
+@keyframes moveHeader {
+    0% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(20px);
+    }
+}
+
+.moving {
+    animation: moveHeader 1s infinite alternate ease-in-out;
+}
